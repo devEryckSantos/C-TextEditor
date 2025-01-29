@@ -15,7 +15,7 @@ static void Menu()
     {
         case 0: Environment.Exit(0); break;
         case 1: Open(); break;
-        case 2: Edit();  break;
+        case 2: Edit(); break;
     }
 }
 
@@ -26,5 +26,17 @@ static void Open()
 
 static void Edit()
 {
+    Console.Clear();
+    Console.WriteLine("Digite seu texto abaixo. (ESC para sair)");
+    Console.WriteLine("-------------------------");
+    string text = "";
 
+    do // iteração e concatenação dos valores.
+    {
+        text += Console.ReadLine();
+        text += Environment.NewLine; // quebra de linha
+    }
+    while (Console.ReadKey().Key != ConsoleKey.Escape);
+
+    Console.WriteLine(text);
 }

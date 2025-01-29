@@ -12,3 +12,4 @@ C:\Users\Eryck\TextEditor\obj\Debug\net8.0\refint\TextEditor.dll
 C:\Users\Eryck\TextEditor\obj\Debug\net8.0\TextEditor.pdb
 C:\Users\Eryck\TextEditor\obj\Debug\net8.0\TextEditor.genruntimeconfig.cache
 C:\Users\Eryck\TextEditor\obj\Debug\net8.0\ref\TextEditor.dll
+C:\Users\Eryck\TextEditor\obj\Debug\net8.0\TextEditor.sourcelink.json
