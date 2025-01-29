@@ -37,6 +37,17 @@ static void Edit()
         text += Environment.NewLine; // quebra de linha
     }
     while (Console.ReadKey().Key != ConsoleKey.Escape);
+}
 
-    Console.WriteLine(text);
+static void save(string text)
+{
+    Console.Clear();
+    Console.WriteLine("Qual caminho para salvar o arquivo?");
+    var path = Console.ReadLine();
+
+    using (var file = new StreamWriter(path))
+    {
+        file.Write(text);
+    }
+
 }
