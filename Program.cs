@@ -15,20 +15,31 @@ static void Menu()
     {
         case 0: Environment.Exit(0); break;
         case 1: Open(); break;
-        case 2: Edit(); break;
+        case 2: Create(); break;
     }
 }
 
 static void Open()
 {
+    Console.Clear();
+    Console.WriteLine("Qual o caminho do arquivo?");
+    var path = Console.ReadLine();
 
+    using (var file = new StreamReader(path)) // leitura do documento
+    {
+        string text = file.ReadToEnd(); // ler o documento até o final
+        Console.WriteLine(text);
+    }
+
+    Console.ReadLine();
+    Menu();
 }
 
-static void Edit()
+static void Create()
 {
     Console.Clear();
     Console.WriteLine("Digite seu texto abaixo. (ESC para sair)");
-    Console.WriteLine("-------------------------");
+    Console.WriteLine("----------------------------------------");
     string text = "";
 
     do // iteração e concatenação dos valores.
@@ -47,7 +58,7 @@ static void Save(string text)
     Console.WriteLine("Qual caminho para salvar o arquivo?");
     var path = Console.ReadLine();
 
-    using (var file = new StreamWriter(path))
+    using (var file = new StreamWriter(path)) // criação do arquivo
     {
         file.Write(text);
     }
