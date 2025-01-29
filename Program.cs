@@ -37,9 +37,11 @@ static void Edit()
         text += Environment.NewLine; // quebra de linha
     }
     while (Console.ReadKey().Key != ConsoleKey.Escape);
+
+    Save(text);
 }
 
-static void save(string text)
+static void Save(string text)
 {
     Console.Clear();
     Console.WriteLine("Qual caminho para salvar o arquivo?");
@@ -50,4 +52,7 @@ static void save(string text)
         file.Write(text);
     }
 
+    Console.WriteLine($"Aquivo {path} salvo com sucesso!");
+    Console.ReadLine();
+    Menu();
 }
